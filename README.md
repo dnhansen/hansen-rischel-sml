@@ -7,7 +7,7 @@ The SML/NJ REPL `sml` is quite bad, but most of its defects can be fixed by runn
     alias sml='rlwrap sml'
 
 
-## The value restriction
+## Chapter 5: Lists
 
 See [MLton](http://mlton.org/ValueRestriction) for more on the value restriction rule. Essentially, only non-expansive expressions are allowed as the right-hand side of a value declaration, when this would result in the identifier being declared having a polymorphic type. For instance, the declarations
 
@@ -22,7 +22,7 @@ are allowed, but the declarations
 are not allowed since `xs` and `f` would have types `'a list` and `'a -> 'a` respectively, and the right-hand sides are not non-expansive (so just 'expansive'?). It is not possible to circumvent this by adding type annotations with type variables.
 
 
-## Mutually recursive types
+## Chapter 8: Finite trees
 
 It is easy to declare *directly* (as opposed to indirectly/mutually) recursive types, e.g.
 
@@ -42,3 +42,8 @@ Similarly, the `and` keyword is used to declare mutually recursive types where b
 
     datatype mytype1 = Nil1 | Cons1 of mytype2
     and      mytype2 = Nil2 | Cons2 of mytype1
+
+
+## Chapter 10: Finite sets
+
+Note that since sets do not have an ordering, the function `fold` for sets only makes sense with arguments `f _ s` if the function `f` is both commutative and associative when restricted to the set `s`.  
