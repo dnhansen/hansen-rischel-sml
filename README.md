@@ -46,4 +46,4 @@ Similarly, the `and` keyword is used to declare mutually recursive types where b
 
 ## Chapter 10: Finite sets
 
-Note that since sets do not have an ordering, the function `fold` for sets only makes sense with arguments `f _ s` if the function `f` is both commutative and associative when restricted to the set `s`.  
+Note that since sets do not have an ordering, the function `fold` for sets only makes sense with arguments `f b s` if the value of `List.fold f b s` is independent of the ordering of the underlying list `s`.
